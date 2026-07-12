@@ -1,3 +1,7 @@
+output "virtual_hub_security_partner_providers_id" {
+  description = "Map of id values across all virtual_hub_security_partner_providers, keyed the same as var.virtual_hub_security_partner_providers"
+  value       = { for k, v in azurerm_virtual_hub_security_partner_provider.virtual_hub_security_partner_providers : k => v.id }
+}
 output "virtual_hub_security_partner_providers_location" {
   description = "Map of location values across all virtual_hub_security_partner_providers, keyed the same as var.virtual_hub_security_partner_providers"
   value       = { for k, v in azurerm_virtual_hub_security_partner_provider.virtual_hub_security_partner_providers : k => v.location }
